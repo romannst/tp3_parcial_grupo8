@@ -7,14 +7,15 @@
 </head>
 <body>
     <!-- popup de bienvenida aparece al inicio y se oculta el display al apretar el boton de jugar -->
-    <div class="bienvenida">
+    <div class="bienvenida" id="popup-bienvenida">
         <h1>Bienvenido al juego Memoria Visual</h1>
 
         <button class="btn-jugar" id="jugar">Jugar</button>  
     </div>
-    <div class="contendor-body">
+    <div id="body-juego" class="ocultar">
         <header>
-            <h1 class="titulo-header">Memoria Visual</h1>
+            <h1>Memoria Visual</h1>
+            <p>Intenta encontrar todas las parejas de cartas iguales en el menor tiempo posible.</p>
         </header>
         <main>
             <div class="contenedor-main">
@@ -36,7 +37,7 @@
         </footer>        
     </div>
     <!-- popup cuando se gana, se cambia su display para mostrar -->
-    <div class="ganaste">
+    <div id="popup-ganaste" class="ocultar">
         <h2>¡Felicidades, ganaste! 🎉</h2>
         <button class="btn-jugar">Jugar de nuevo</button>
     </div>
