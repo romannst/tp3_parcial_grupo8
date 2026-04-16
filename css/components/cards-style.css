@@ -3,17 +3,17 @@
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
-  backdrop-filter: blur(10px);
-  padding: 10px 30px 30px 10px;
+  padding: 10px;
   border-radius: 10px;
-  border: solid 3px #8739ac;
-  background-color: #b25fd85b;
+  border: 3px solid var(--borde-tablero);
+  background-color: var(--tablero-fondo);
+  backdrop-filter: blur(10px);
 }
 
 .card {
-  width: 100px;
+  width: calc(25% - 10px);
   height: 100px;
   perspective: 1000px;
   cursor: pointer;
@@ -25,7 +25,7 @@
   position: relative;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  margin: 10px;
+  margin: 0;
 }
 
 .card.flipped .card-inner {
@@ -43,18 +43,17 @@
   justify-content: center;
   font-size: 2rem;
   backface-visibility: hidden;
+  border: 2px solid var(--borde-carta);
 }
 
 .card-back {
-  background-color: #9f62ac;
-  color: #ffffff;
-  border: solid 2px #8739ac;
+  background-color: var(--carta-dorso);
+  color: var(--texto2);
 }
 
 .card-front {
-  background-color: #eaeaea;
+  background-color: var(--carta-frente);
   transform: rotateY(180deg);
-  border: solid 2px #8739ac;
 }
 
 .card-img {
