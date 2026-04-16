@@ -4,27 +4,20 @@
 :root {
   --fondo-1: #1e1e2f;
   --fondo-2: #2c2c44;
-  --texto2:  #ffffff ;
+  --texto: #81ecec;
+  --texto2: #ffffff;
   --fondo-titulo: rgba(0, 0, 0, 0.3);
-  
   --ancho-maximo: 800px;
- 
   --principal: #00cec9;
   --principal-hover: #81ecec;
-
-  --animacion: #882d79; 
+  --animacion: #882d79;
   --reinicio-hover: #ff8787;
-
   --tablero-fondo: rgba(178, 95, 216, 0.15);
   --borde-tablero: #8739ac;
-
-  
-
   --carta-frente: #eaeaea;
   --carta-dorso: #9f62ac;
   --borde-carta: #8739ac;
-
-  --texto: #81ecec;
+  --overlay: rgba(0, 0, 0, 0.85);
 }
 
 * {
@@ -55,7 +48,7 @@ header {
   padding: 12px 25px;
   border-radius: 10px;
   background: var(--fondo-titulo);
-  color: #81ecec;
+  color: var(--texto);
 }
 
 main {
@@ -87,7 +80,6 @@ main {
   padding: 10px;
   min-width: 120px;
   text-align: center;
-  display: inline-block;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
@@ -97,7 +89,6 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   width: 440px;
-  justify-content: flex-start;
 }
 
 .tablero-juego > * {
@@ -128,4 +119,71 @@ footer {
 
 .oculto {
   display: none;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--principal-hover);
+}
+
+.nav-links button {
+  all: unset;
+  padding: 10px 20px;
+  background: var(--principal);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-links button:hover {
+  background: var(--principal-hover);
+}
+
+.encabezado-reglas {
+  text-align: center;
+  margin: 20px auto;
+  max-width: var(--ancho-maximo);
+  background: var(--fondo-titulo);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.lista-reglas {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.lista-reglas ol {
+  padding-left: 20px;
+}
+
+.lista-reglas li {
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
