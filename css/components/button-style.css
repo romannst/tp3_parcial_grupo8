@@ -1,0 +1,33 @@
+.btn-jugar,
+.btn-reiniciar,
+.nav-links button {
+  all: unset;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 90px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--texto);
+}
+
+.btn-jugar:hover,
+.nav-links button:hover {
+  background-color: var(--principal-hover);
+  color: black;
+}
+
+.btn-reiniciar {
+  background-color: #d60fdd;
+  border: 1px solid rgba(13, 171, 182, 0.2);
+}
+
+.btn-reiniciar:hover {
+  background-color: var(--reinicio-hover);
+  color: black;
+}
