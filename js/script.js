@@ -1,13 +1,13 @@
 // Array de las imagenes
 const cards = [
-    "assets/img/anillo-de-bodas.png",   
-    "assets/img/bota.png", 
-    "assets/img/cetro.png", 
-    "assets/img/cristal.png", 
-    "assets/img/espada-larga.png", 
-    "assets/img/libro-de-hechizos.png", 
-    "assets/img/monstruo.png", 
-    "assets/img/sombrero-de-bruja.png"  
+    "assets/img/necromancer.png",   
+    "assets/img/sword.png", 
+    "assets/img/card.png",  
+    "assets/img/bomb.png",
+    "assets/img/spear.png",
+    "assets/img/ninja.png",
+    "assets/img/chain.png",
+    "assets/img/assasin.png"
 ];
 
 //Variables globales
