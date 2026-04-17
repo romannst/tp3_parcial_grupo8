@@ -10,9 +10,20 @@ const cards = [
     ""  //<-- vincular url de imagen (Alejo)
 ];
 
+//Variables globales
+let segundos = 0; //Segundos transcurridos desde el inicio del juego
+let cartasVolteadas = 0; //Lleva la cuenta de la cantidad de cartas volteadas
+let intentos = 0; //Cantidad de intentos 
+let aciertos = 0; //Cantidad de aciertos
+let cartasSeleccionadas = []; //Arreglo donde se almacenan las cartas seleccionadas para compararlas
+let temporizadorActivo = false; //Condicional que determina si el temporizador esta activo o no
+
 //Elementos de HTML
 const tablero = document.getElementById("juego");
 const botonReiniciar = document.getElementById("reiniciar");
+const stat_aciertos = document.getElementById("stats-aciertos");
+const stat_intentos = document.getElementById("stats-intentos");
+const stat_tiempo = document.getElementById("stats-tiempo");
 
 
 //Mezclar cartas
@@ -20,13 +31,62 @@ function mezclarCartas(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-//Agrega o Saca la clase "flipped" al hacer click
+//Funcion principal del juego
 function onCardClick(card) {
-    card.classList.toggle("flipped");
+  //Se inicia el temporizador cuando se voltea la primera carta
+  if (!temporizadorActivo) {
+    temporizador();
+  }
+
+  //Las proximas 2 cartas volteadas se agregan a un arreglo para luego compararlas
+  if (cartasVolteadas < 2) {
+    card.classList.toggle("flipped"); 
+
+    if (!cartasSeleccionadas[0] || cartasSeleccionadas[0] !== card) {
+      cartasSeleccionadas.push(card);
+
+      //Cuando se voltean las dos cartas se compara su imagen
+      if(++cartasVolteadas == 2){
+      intentos++; //Se incrementan los intentos 
+      stat_intentos.innerHTML = "Intentos :" + intentos;
+
+        //Si las cartas son iguales se mantienen boca arriba y se actualizan los aciertos
+        if(cartasSeleccionadas[0].innerHTML == cartasSeleccionadas[1].innerHTML) {
+          cartasVolteadas = 0;
+          cartasSeleccionadas = [];
+          aciertos++;
+          stat_aciertos.innerHTML = "Aciertos: " + aciertos + "/8";
+        }
+
+        //Si las cartas son distintas se vuelven a voltear tras 1 segundo
+        else {
+          setTimeout (() => {
+            cartasSeleccionadas[0].classList.toggle("flipped");
+            cartasSeleccionadas[1].classList.toggle("flipped");
+            cartasVolteadas = 0;
+            cartasSeleccionadas = [];
+          }, 1000);
+        }
+      }
+    }
+  }
 }
 
 //Inicia el tablero
-function iniciarTablero() {
+function iniciarTablero() { 
+    //Reseteo de las variables globales
+    segundos = 0;
+    intentos = 0;
+    aciertos = 0;
+    temporizadorActivo = false;
+    cartasVolteadas = 0;
+    cartasSeleccionadas = [];
+
+    //Reseteo del display
+    stat_intentos.innerHTML = "Intentos : 0";
+    stat_aciertos.innerHTML = "Aciertos : 0/8";
+    stat_tiempo.innerHTML = "Tiempo: 0 S"
+    
     //Limpia el tablero
     tablero.innerHTML = "";
 
@@ -67,7 +127,6 @@ function iniciarTablero() {
         
         //Agrega la carta altablero (HTML)
         tablero.appendChild(contenedor);
-
     });
 }
 
@@ -76,3 +135,18 @@ botonReiniciar.addEventListener("click", iniciarTablero);
 
 //Ejecuta el juego al cargar la pagina
 iniciarTablero();
+
+//Timer que cuenta la cantidad de segundos de juego transcurridos
+function temporizador() {
+  //Se establece un intervalo que actualiza el temporizador cada 1000ms
+  temporizadorActivo = true
+  const temp = setInterval(() => {
+    segundos++;
+    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
+    //Cuando la partida termina el temporizador se detiene y se reinicia
+    if (aciertos == 8 || !temporizadorActivo) {
+      clearInterval(temp);
+      segundos = 0;
+    }
+  }, 1000);
+}
