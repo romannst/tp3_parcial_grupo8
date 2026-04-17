@@ -50,6 +50,9 @@
   color: #ffffff;
   border: solid 2px #8739ac;
 }
+.card-back-symbol {
+  user-select: none;
+}
 
 .card-front {
   background-color: #eaeaea;

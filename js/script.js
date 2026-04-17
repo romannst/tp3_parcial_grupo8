@@ -39,7 +39,8 @@ function onCardClick(card) {
   }
 
   //Las proximas 2 cartas volteadas se agregan a un arreglo para luego compararlas
-  if (cartasVolteadas < 2) {
+  //fix: agrego en la condicion que la carta no este volteada para que no se pueda clickear nuevamente
+  if (cartasVolteadas < 2 && !card.classList.contains("flipped")) {
     card.classList.toggle("flipped"); 
 
     if (!cartasSeleccionadas[0] || cartasSeleccionadas[0] !== card) {
@@ -122,7 +123,7 @@ function iniciarTablero() {
           </div>
         `;
 
-        //Al hacer click, ejecutra "onCardClick" y da vuelta la carta
+        //Al hacer click, ejecuta "onCardClick" y da vuelta la carta
         contenedor.addEventListener('click', () => onCardClick(contenedor));
         
         //Agrega la carta altablero (HTML)
@@ -141,12 +142,15 @@ function temporizador() {
   //Se establece un intervalo que actualiza el temporizador cada 1000ms
   temporizadorActivo = true
   const temp = setInterval(() => {
-    segundos++;
-    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
     //Cuando la partida termina el temporizador se detiene y se reinicia
+    //fix: Primero se verifica si se tienen los 8 aciertos o si el temporizador no esta activo
     if (aciertos == 8 || !temporizadorActivo) {
       clearInterval(temp);
       segundos = 0;
+      return ; //fix: sale de la funcion para que no se ejecute el incremento de segundos ni la actualizacion del display
     }
+    //fix: Despues se incrementa el contador de segundos y se actualiza el display
+    segundos++;
+    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
   }, 1000);
 }
