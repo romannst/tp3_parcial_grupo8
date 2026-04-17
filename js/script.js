@@ -2,12 +2,12 @@
 const cards = [
     "assets/img/momo.jpg",   //<-- Podes cambiar la imagen, es de prueba (Alejo)
     "assets/img/momo-2.jpg", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "", //<-- vincular url de imagen (Alejo)
-    "", //<-- vincular url de imagen (Alejo)
-    "", //<-- vincular url de imagen (Alejo)
-    "", //<-- vincular url de imagen (Alejo)
-    "", //<-- vincular url de imagen (Alejo)
-    ""  //<-- vincular url de imagen (Alejo)
+    "assets/img/1.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/2.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/3.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/4.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/5.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/6.png"  //<-- Podes cambiar la imagen, es de prueba (Alejo)
 ];
 
 //Variables globales
@@ -52,6 +52,8 @@ function onCardClick(card) {
 
         //Si las cartas son iguales se mantienen boca arriba y se actualizan los aciertos
         if(cartasSeleccionadas[0].innerHTML == cartasSeleccionadas[1].innerHTML) {
+          cartasSeleccionadas[0].classList.add('matched');
+          cartasSeleccionadas[1].classList.add('matched');
           cartasVolteadas = 0;
           cartasSeleccionadas = [];
           aciertos++;
@@ -60,7 +62,12 @@ function onCardClick(card) {
 
         //Si las cartas son distintas se vuelven a voltear tras 1 segundo
         else {
+          cartasSeleccionadas[0].classList.add('shake');
+          cartasSeleccionadas[1].classList.add('shake');
+
           setTimeout (() => {
+            cartasSeleccionadas[0].classList.remove('shake');
+            cartasSeleccionadas[1].classList.remove('shake');
             cartasSeleccionadas[0].classList.toggle("flipped");
             cartasSeleccionadas[1].classList.toggle("flipped");
             cartasVolteadas = 0;
