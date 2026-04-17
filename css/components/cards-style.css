@@ -80,7 +80,7 @@
 }
 
 .card-front {
-  background-color: #eaeaea;
+  background-color: transparent; /* cambio el fondo de las imagenes */
   transform: rotateY(180deg);
   border: solid 2px #8739ac;
 }

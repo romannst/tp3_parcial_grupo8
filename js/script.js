@@ -1,13 +1,13 @@
 // Array de las imagenes
 const cards = [
-    "assets/img/momo.jpg",   //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/momo-2.jpg", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/1.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/2.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/3.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/4.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/5.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/6.png"  //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/anillo-de-bodas.png",   
+    "assets/img/bota.png", 
+    "assets/img/cetro.png", 
+    "assets/img/cristal.png", 
+    "assets/img/espada-larga.png", 
+    "assets/img/libro-de-hechizos.png", 
+    "assets/img/monstruo.png", 
+    "assets/img/sombrero-de-bruja.png"  
 ];
 
 //Variables globales
