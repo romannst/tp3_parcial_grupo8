@@ -1,0 +1,22 @@
+.bienvenida,
+#popup-ganaste {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  z-index: 1000;
+  display: none;
+}
+
+.bienvenida {
+  display: flex;
+}
+
+.bienvenida.visible,
+#popup-ganaste.visible {
+  display: flex;
+}
