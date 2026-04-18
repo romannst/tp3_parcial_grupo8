@@ -27,13 +27,13 @@ body {
   flex-direction: column;
 }
 
-.oculto {
+.ocultar {
   display: none;
 }
 
+/* Remplazo el bloque .bienvenida, #popup-ganaste existente */
 .bienvenida,
 #popup-ganaste {
-  display: none !important;
   position: fixed;
   inset: 0;
   background: var(--overlay);
@@ -43,7 +43,19 @@ body {
   gap: 20px;
   text-align: center;
   z-index: 1000;
+  display: none;
 }
+
+.bienvenida {
+  display: flex;
+}
+
+.bienvenida.visible,
+#popup-ganaste.visible {
+  display: flex;
+}
+/* -------------------------------------- */
+
 
 header {
   text-align: center;
