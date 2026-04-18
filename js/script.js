@@ -167,8 +167,14 @@ function temporizador() {
   }, 1000);
 }
 
-/* event listener del boton jugar de nuevo */
+/* Event listener del botón "Jugar de nuevo" - oculta el popup de victoria y reinicia el tablero */
 document.querySelector("#popup-ganaste .btn-jugar").addEventListener("click", () => {
   document.getElementById("popup-ganaste").classList.remove("visible");
   iniciarTablero();
+});
+
+/* Event listener del botón "Jugar ahora" - oculta el popup de bienvenida y muestra el juego */
+document.getElementById("jugar").addEventListener("click", () => {
+  document.getElementById("popup-bienvenida").style.display = "none";
+  document.getElementById("body-juego").classList.remove("ocultar");
 });
