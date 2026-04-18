@@ -61,6 +61,10 @@ function onCardClick(card) {
 
           // muestra el popup de victoria al ganar la partida
           if (aciertos == 8) {
+            document.getElementById("resultado-intentos").textContent = "Intentos: " + intentos;
+            document.getElementById("resultado-aciertos").textContent = "Aciertos: " + aciertos + "/8";
+            document.getElementById("resultado-tiempo").textContent = "Tiempo: " + segundos + " segundos";
+
             document.getElementById("popup-ganaste").classList.add("visible");
           }
         }
