@@ -58,6 +58,11 @@ function onCardClick(card) {
           cartasSeleccionadas = [];
           aciertos++;
           stat_aciertos.innerHTML = "Aciertos: " + aciertos + "/8";
+
+          // muestra el popup de victoria al ganar la partida
+          if (aciertos == 8) {
+            document.getElementById("popup-ganaste").classList.add("visible");
+          }
         }
 
         //Si las cartas son distintas se vuelven a voltear tras 1 segundo
@@ -157,3 +162,9 @@ function temporizador() {
     }
   }, 1000);
 }
+
+/* event listener del boton jugar de nuevo */
+document.querySelector("#popup-ganaste .btn-jugar").addEventListener("click", () => {
+  document.getElementById("popup-ganaste").classList.remove("visible");
+  iniciarTablero();
+});
