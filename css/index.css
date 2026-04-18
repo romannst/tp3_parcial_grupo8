@@ -27,7 +27,7 @@ body {
   flex-direction: column;
 }
 
-.oculto {
+.ocultar {
   display: none;
 }
 
@@ -44,6 +44,10 @@ body {
   text-align: center;
   z-index: 1000;
   display: none;
+}
+
+.bienvenida {
+  display: flex;
 }
 
 .bienvenida.visible,
