@@ -1,13 +1,13 @@
 // Array de las imagenes
 const cards = [
-    "assets/img/momo.jpg",   //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/momo-2.jpg", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/1.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/2.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/3.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/4.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/5.png", //<-- Podes cambiar la imagen, es de prueba (Alejo)
-    "assets/img/6.png"  //<-- Podes cambiar la imagen, es de prueba (Alejo)
+    "assets/img/necromancer.png",   
+    "assets/img/sword.png", 
+    "assets/img/card.png",  
+    "assets/img/bomb.png",
+    "assets/img/spear.png",
+    "assets/img/ninja.png",
+    "assets/img/chain.png",
+    "assets/img/assasin.png"
 ];
 
 //Variables globales
@@ -58,6 +58,15 @@ function onCardClick(card) {
           cartasSeleccionadas = [];
           aciertos++;
           stat_aciertos.innerHTML = "Aciertos: " + aciertos + "/8";
+
+          // muestra el popup de victoria al ganar la partida
+          if (aciertos == 8) {
+            document.getElementById("resultado-intentos").textContent = "Intentos: " + intentos;
+            document.getElementById("resultado-aciertos").textContent = "Aciertos: " + aciertos + "/8";
+            document.getElementById("resultado-tiempo").textContent = "Tiempo: " + segundos + " segundos";
+
+            document.getElementById("popup-ganaste").classList.add("visible");
+          }
         }
 
         //Si las cartas son distintas se vuelven a voltear tras 1 segundo
@@ -157,3 +166,15 @@ function temporizador() {
     }
   }, 1000);
 }
+
+/* Event listener del botón "Jugar de nuevo" - oculta el popup de victoria y reinicia el tablero */
+document.querySelector("#popup-ganaste .btn-jugar").addEventListener("click", () => {
+  document.getElementById("popup-ganaste").classList.remove("visible");
+  iniciarTablero();
+});
+
+/* Event listener del botón "Jugar ahora" - oculta el popup de bienvenida y muestra el juego */
+document.getElementById("jugar").addEventListener("click", () => {
+  document.getElementById("popup-bienvenida").style.display = "none";
+  document.getElementById("body-juego").classList.remove("ocultar");
+});
