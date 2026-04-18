@@ -37,6 +37,8 @@ function onCardClick(card) {
   if (!temporizadorActivo) {
     temporizador();
   }
+  
+  if (card.classList.contains("flipped")) return;
 
   //Las proximas 2 cartas volteadas se agregan a un arreglo para luego compararlas
   if (cartasVolteadas < 2) {
@@ -51,7 +53,7 @@ function onCardClick(card) {
       stat_intentos.innerHTML = "Intentos :" + intentos;
 
         //Si las cartas son iguales se mantienen boca arriba y se actualizan los aciertos
-        if(cartasSeleccionadas[0].innerHTML == cartasSeleccionadas[1].innerHTML) {
+        if(cartasSeleccionadas[0].dataset.image == cartasSeleccionadas[1].dataset.image) {
           cartasSeleccionadas[0].classList.add('matched');
           cartasSeleccionadas[1].classList.add('matched');
           cartasVolteadas = 0;
@@ -157,13 +159,13 @@ function temporizador() {
   //Se establece un intervalo que actualiza el temporizador cada 1000ms
   temporizadorActivo = true
   const temp = setInterval(() => {
-    segundos++;
-    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
     //Cuando la partida termina el temporizador se detiene y se reinicia
     if (aciertos == 8 || !temporizadorActivo) {
+      segundos = -1;
       clearInterval(temp);
-      segundos = 0;
     }
+    segundos++;
+    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
   }, 1000);
 }
 
