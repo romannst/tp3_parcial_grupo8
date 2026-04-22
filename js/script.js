@@ -11,12 +11,12 @@ const cards = [
 ];
 
 //Variables globales
-let segundos = 0; //Segundos transcurridos desde el inicio del juego
-let cartasVolteadas = 0; //Lleva la cuenta de la cantidad de cartas volteadas
-let intentos = 0; //Cantidad de intentos 
-let aciertos = 0; //Cantidad de aciertos
-let cartasSeleccionadas = []; //Arreglo donde se almacenan las cartas seleccionadas para compararlas
-let temporizadorActivo = false; //Condicional que determina si el temporizador esta activo o no
+let segundos = 0; 
+let cartasVolteadas = 0; 
+let intentos = 0; 
+let aciertos = 0; 
+let cartasSeleccionadas = []; 
+let temporizadorActivo = false; 
 
 //Elementos de HTML
 const tablero = document.getElementById("juego");
@@ -33,26 +33,25 @@ function mezclarCartas(array) {
 
 //Funcion principal del juego
 function onCardClick(card) {
-  //Se inicia el temporizador cuando se voltea la primera carta
   if (!temporizadorActivo) {
     temporizador();
   }
   
   if (card.classList.contains("flipped")) return;
 
-  //Las proximas 2 cartas volteadas se agregan a un arreglo para luego compararlas
+  
   if (cartasVolteadas < 2) {
     card.classList.toggle("flipped"); 
 
     if (!cartasSeleccionadas[0] || cartasSeleccionadas[0] !== card) {
       cartasSeleccionadas.push(card);
 
-      //Cuando se voltean las dos cartas se compara su imagen
+      
       if(++cartasVolteadas == 2){
-      intentos++; //Se incrementan los intentos 
+      intentos++; 
       statIntentos.innerHTML = "Intentos :" + intentos;
 
-        //Si las cartas son iguales se mantienen boca arriba y se actualizan los aciertos
+        
         if(cartasSeleccionadas[0].dataset.image == cartasSeleccionadas[1].dataset.image) {
           cartasSeleccionadas[0].classList.add('matched');
           cartasSeleccionadas[1].classList.add('matched');
@@ -61,7 +60,7 @@ function onCardClick(card) {
           aciertos++;
           statAciertos.innerHTML = "Aciertos: " + aciertos + "/8";
 
-          // muestra el popup de victoria al ganar la partida
+          
           if (aciertos == 8) {
             document.getElementById("resultado-intentos").textContent = "Intentos: " + intentos;
             document.getElementById("resultado-aciertos").textContent = "Aciertos: " + aciertos + "/8";
@@ -71,7 +70,7 @@ function onCardClick(card) {
           }
         }
 
-        //Si las cartas son distintas se vuelven a voltear tras 1 segundo
+       
         else {
           cartasSeleccionadas[0].classList.add('shake');
           cartasSeleccionadas[1].classList.add('shake');
@@ -92,7 +91,7 @@ function onCardClick(card) {
 
 //Inicia el tablero
 function iniciarTablero() { 
-    //Reseteo de las variables globales
+    
     segundos = 0;
     intentos = 0;
     aciertos = 0;
@@ -100,35 +99,28 @@ function iniciarTablero() {
     cartasVolteadas = 0;
     cartasSeleccionadas = [];
 
-    //Reseteo del display
+   
     statIntentos.innerHTML = "Intentos : 0";
     statAciertos.innerHTML = "Aciertos : 0/8";
     statTiempo.innerHTML = "Tiempo: 0 S"
     
-    //Limpia el tablero
+    
     tablero.innerHTML = "";
 
-    //Duplica las cartas para que haya pares
+   
     const cartasDuplicadas = [...cards, ...cards];
 
-    //Mezcla las cartas al iniciar el tablero
     const cartasMezcladas = mezclarCartas(cartasDuplicadas);
 
-    //Recorre cada carta
     cartasMezcladas.forEach((cards, index) => {
-        //Crea el div de la carta (card)
         const contenedor = document.createElement('div');
 
-        //Agrega la clase "card"
         contenedor.classList.add('card');
         
-        //Guarda la imagen para despues poder comparar
         contenedor.dataset.image = cards;
 
-        //Delay en animacion
         contenedor.style.animationDelay = `${index * 40}ms`;
 
-        //Estructura interna de la card
         contenedor.innerHTML = `
           <div class="card-inner">
             <div class="card-back" aria-hidden="true">
@@ -140,26 +132,20 @@ function iniciarTablero() {
           </div>
         `;
 
-        //Al hacer click, ejecutra "onCardClick" y da vuelta la carta
         contenedor.addEventListener('click', () => onCardClick(contenedor));
         
-        //Agrega la carta altablero (HTML)
         tablero.appendChild(contenedor);
     });
 }
 
-//Se generan nuevas cartas al tocar el boton de reiniciar
 botonReiniciar.addEventListener("click", iniciarTablero);
 
-//Ejecuta el juego al cargar la pagina
 iniciarTablero();
 
 //Timer que cuenta la cantidad de segundos de juego transcurridos
 function temporizador() {
-  //Se establece un intervalo que actualiza el temporizador cada 1000ms
   temporizadorActivo = true
   const temp = setInterval(() => {
-    //Cuando la partida termina el temporizador se detiene y se reinicia
     if (aciertos == 8 || !temporizadorActivo) {
       segundos = -1;
       clearInterval(temp);
@@ -169,13 +155,11 @@ function temporizador() {
   }, 1000);
 }
 
-/* Event listener del botón "Jugar de nuevo" - oculta el popup de victoria y reinicia el tablero */
 document.querySelector("#popup-ganaste .btn-jugar").addEventListener("click", () => {
   document.getElementById("popup-ganaste").classList.remove("visible");
   iniciarTablero();
 });
 
-/* Event listener del botón "Jugar ahora" - oculta el popup de bienvenida y muestra el juego */
 document.getElementById("jugar").addEventListener("click", () => {
   document.getElementById("popup-bienvenida").style.display = "none";
   document.getElementById("body-juego").classList.remove("ocultar");
