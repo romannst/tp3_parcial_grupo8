@@ -1,0 +1,62 @@
+@import url(./components/cards-style.css);
+@import url(./components/button-style.css);
+@import url(./components/popups-style.css);
+@import url(./components/header-style.css);
+@import url(./components/tablero-style.css);
+@import url(./components/footer-style.css);
+@import url(./components/relgas-style.css);
+
+:root {
+  --fondo-1: #1e1e2f;
+  --fondo-2: #2c2c44;
+  --texto: #81ecec;
+  --fondo-titulo: rgba(0, 0, 0, 0.3);
+  --ancho-maximo: 800px;
+  --principal: #00cec9;
+  --principal-hover: #81ecec;
+  --overlay: rgba(0, 0, 0, 0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, var(--fondo-1), var(--fondo-2));
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ocultar {
+  display: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.contenedor-main {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  text-align: center;
+  padding: 20px;
+}
+
+.contenedor-main h2 {
+  margin-bottom: 10px;
+}
+
+.contenedor-main p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  padding: 0 10px;
+}

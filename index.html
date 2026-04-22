@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoria Visual</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- popup de bienvenida aparece al inicio y se oculta el display al apretar el boton de jugar -->
+    <div class="bienvenida" id="popup-bienvenida">
+      <h1>Bienvenido al juego Memoria Visual</h1>
+      <p>Testea tu memoria en este juego didáctico.</p>
+      <button class="btn-jugar" id="jugar">Jugar ahora</button>
+    </div>
+    <div id="body-juego" class="ocultar">
+      <!-- barra de navegación -->
+      <header>
+        <div class="titulo-header">
+          <h1>El juego de memorizar</h1>
+        </div>
+        <div class="nav-header">
+          <nav class="nav-links">
+            <a class="btn-nav" href="../index.html">Inicio</a>
+            <a class="btn-nav" href="./pages/reglas.html">Reglas</a>
+            <a class="btn-nav" href="../index.html#juego">Jugar</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div class="contenedor-main">
+          <!-- título y breve descripción antes del tablero -->
+          <h2>Memoria Visual</h2>
+          <p>
+            Intenta encontrar todas las parejas de cartas iguales en el menor
+            tiempo posible.
+          </p>
+          <!-- tablero del juego -->
+          <section class="juego">
+            <div class="stats-juego">
+              <span id="stats-intentos">Intentos: 0 </span>
+              <span id="stats-aciertos">Aciertos: 0/8 </span>
+              <span id="stats-tiempo">Tiempo: 0 S </span>
+            </div>
+            <div class="tablero-juego" id="juego">
+              <!-- se generan las cards con javascript -->
+            </div>
+            <!-- reinicia el tablero al presionar el botón -->
+            <button class="btn-reiniciar" id="reiniciar">Reiniciar</button>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <p>&copy; 2026 Memoria Visual. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+    <!-- popup cuando se gana, se cambia su display para mostrar -->
+    <div id="popup-ganaste" class="ocultar">
+      <h2>¡Felicidades, ganaste! 🎉</h2>
+      <p id="resultado-intentos">Intentos: 0</p>
+      <p id="resultado-aciertos">Aciertos: 0/8</p>
+      <p id="resultado-tiempo">Tiempo: 0 segundos</p>
+      <button class="btn-jugar">Jugar de nuevo</button>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.encabezado-reglas {
+  text-align: center;
+  margin: 20px auto;
+  max-width: var(--ancho-maximo);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.lista-reglas {
+  max-width: var(--ancho-maximo);
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  text-align: left;
+}
