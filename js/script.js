@@ -21,9 +21,9 @@ let temporizadorActivo = false; //Condicional que determina si el temporizador e
 //Elementos de HTML
 const tablero = document.getElementById("juego");
 const botonReiniciar = document.getElementById("reiniciar");
-const stat_aciertos = document.getElementById("stats-aciertos");
-const stat_intentos = document.getElementById("stats-intentos");
-const stat_tiempo = document.getElementById("stats-tiempo");
+const statAciertos = document.getElementById("stats-aciertos");
+const statIntentos = document.getElementById("stats-intentos");
+const statTiempo = document.getElementById("stats-tiempo");
 
 
 //Mezclar cartas
@@ -50,7 +50,7 @@ function onCardClick(card) {
       //Cuando se voltean las dos cartas se compara su imagen
       if(++cartasVolteadas == 2){
       intentos++; //Se incrementan los intentos 
-      stat_intentos.innerHTML = "Intentos :" + intentos;
+      statIntentos.innerHTML = "Intentos :" + intentos;
 
         //Si las cartas son iguales se mantienen boca arriba y se actualizan los aciertos
         if(cartasSeleccionadas[0].dataset.image == cartasSeleccionadas[1].dataset.image) {
@@ -59,7 +59,7 @@ function onCardClick(card) {
           cartasVolteadas = 0;
           cartasSeleccionadas = [];
           aciertos++;
-          stat_aciertos.innerHTML = "Aciertos: " + aciertos + "/8";
+          statAciertos.innerHTML = "Aciertos: " + aciertos + "/8";
 
           // muestra el popup de victoria al ganar la partida
           if (aciertos == 8) {
@@ -101,9 +101,9 @@ function iniciarTablero() {
     cartasSeleccionadas = [];
 
     //Reseteo del display
-    stat_intentos.innerHTML = "Intentos : 0";
-    stat_aciertos.innerHTML = "Aciertos : 0/8";
-    stat_tiempo.innerHTML = "Tiempo: 0 S"
+    statIntentos.innerHTML = "Intentos : 0";
+    statAciertos.innerHTML = "Aciertos : 0/8";
+    statTiempo.innerHTML = "Tiempo: 0 S"
     
     //Limpia el tablero
     tablero.innerHTML = "";
@@ -165,7 +165,7 @@ function temporizador() {
       clearInterval(temp);
     }
     segundos++;
-    stat_tiempo.innerHTML = "Tiempo: " + segundos + " S";
+    statTiempo.innerHTML = "Tiempo: " + segundos + " S";
   }, 1000);
 }
 
