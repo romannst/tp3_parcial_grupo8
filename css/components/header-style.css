@@ -9,6 +9,9 @@ header {
   border-radius: 10px;
   background: var(--fondo-titulo);
 }
+.titulo-header h1 {
+  font-family: var(--fuente-titulo);
+}
 
 .nav-header {
   display: flex;
@@ -20,8 +23,12 @@ header {
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
+.nav-links .btn-nav {
+  font-family: var(--fuente-btn);
+}
 .nav-links a,
 .nav-links button {
   all: unset;

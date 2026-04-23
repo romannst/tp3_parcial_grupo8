@@ -23,6 +23,7 @@
 }
 
 .btn-reiniciar {
+  font-family: var(--fuente-btn);
   background-color: #d60fdd;
   border: 1px solid rgba(13, 171, 182, 0.2);
 }

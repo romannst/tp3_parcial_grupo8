@@ -8,12 +8,17 @@
 }
 
 .lista-reglas {
+  font-family: var(--fuente-texto);
   max-width: var(--ancho-maximo);
   margin: 20px auto;
   background: rgba(255, 255, 255, 0.05);
-  padding: 25px;
+  padding: 25px 25px 0;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
   text-align: left;
+}
+.lista-reglas li {
+  margin: 0 20px 15px;
+  line-height: 1.5;
 }
