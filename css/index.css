@@ -4,7 +4,8 @@
 @import url(./components/header-style.css);
 @import url(./components/tablero-style.css);
 @import url(./components/footer-style.css);
-@import url(./components/relgas-style.css);
+@import url(./components/reglas-style.css);
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oxanium:wght@200..800&display=swap');
 
 :root {
   --fondo-1: #1e1e2f;
@@ -15,6 +16,9 @@
   --principal: #00cec9;
   --principal-hover: #81ecec;
   --overlay: rgba(0, 0, 0, 0.85);
+  --fuente-titulo: 'Cinzel', serif;
+  --fuente-btn: 'Oxanium', cursive;
+  --fuente-texto: 'Nunito Sans', sans-serif;
 }
 
 * {
@@ -24,7 +28,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: linear-gradient(135deg, var(--fondo-1), var(--fondo-2));
   color: var(--texto);
   min-height: 100vh;
@@ -52,10 +55,12 @@ main {
 }
 
 .contenedor-main h2 {
+  font-family: var(--fuente-titulo);
   margin-bottom: 10px;
 }
 
 .contenedor-main p {
+  font-family: var(--fuente-texto);
   margin-bottom: 25px;
   line-height: 1.6;
   padding: 0 10px;

@@ -14,6 +14,26 @@
 
 .bienvenida {
   display: flex;
+  padding: 0 20px;
+}
+.bienvenida h1 {
+  font-family: var(--fuente-titulo);
+}
+.bienvenida p {
+  font-family: var(--fuente-texto);
+}
+.bienvenida .btn-jugar {
+  font-family: var(--fuente-btn);
+}
+
+#popup-ganaste h2 {
+  font-family: var(--fuente-titulo);
+}
+#popup-ganaste p {
+  font-family: var(--fuente-texto);
+}
+#popup-ganaste .btn-jugar {
+  font-family: var(--fuente-btn);
 }
 
 .bienvenida.visible,
