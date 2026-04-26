@@ -21,11 +21,9 @@ Este proyecto fue desarrollado como trabajo práctico grupal, integrando las con
 
 ## 💻 Tecnologías Utilizadas
 
-| Tecnología | Descripción |
-|-----------|-------------|
-| **HTML** | Estructura semántica del proyecto |
-| **CSS** | Diseño responsivo con Flexbox y animaciones 3D |
-| **JavaScript** | Lógica del juego |
+- **HTML**: Estructura semántica del proyecto
+- **CSS**: Diseño responsivo con Flexbox y animaciones 3D
+- **JavaScript**: Lógica del juego
 
 ---
 
