@@ -1,8 +1,8 @@
 ### GRUPO N8
 
-# 🎮 Memoria Visual - Juego de Parejas
+# Memoria Visual - Juego de Parejas
 
-## 📋 Descripción General
+## Descripción General
 
 **Memoria Visual** es un juego web didáctico que pone a prueba tu memoria visual. Se centra en encontrar todas las parejas de cartas iguales en el menor tiempo posible.
 
@@ -10,7 +10,7 @@ Este proyecto fue desarrollado como trabajo práctico grupal, integrando las con
 
 ---
 
-## 🎮 Cómo Jugar
+## Cómo Jugar
 
 1. **Inicia el Juego**: Hace click en "Jugar ahora" en la pantalla de bienvenida
 2. **Voltea Cartas**: Hace click en cualquier carta para revelar su contenido
@@ -19,7 +19,7 @@ Este proyecto fue desarrollado como trabajo práctico grupal, integrando las con
 
 ---
 
-## 💻 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **HTML**: Estructura semántica del proyecto
 - **CSS**: Diseño responsivo con Flexbox y animaciones 3D
@@ -27,18 +27,18 @@ Este proyecto fue desarrollado como trabajo práctico grupal, integrando las con
 
 ---
 
-## 🎯 Características Principales
+## Características Principales
 
-- 📄 **Estructura Semántica**: Código HTML accesible y bien organizado
-- 📱 **Interfaz Intuitiva**: Navegación clara con popups informativos
-- 🎨 **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos
-- 🌠 **Efectos Visuales**: Animaciones de entrada, aciertos y errores
-- ✨ **Animaciones 3D**: Efectos de volteo de cartas con transformaciones 3D
-- ⏱️ **Sistema de Puntuación**: Seguimiento de intentos, aciertos y tiempo transcurrido
+- **Estructura Semántica**: Código HTML accesible y bien organizado
+- **Interfaz Intuitiva**: Navegación clara con popups informativos
+- **Diseño Responsivo**: Interfaz adaptable a diferentes dispositivos
+- **Efectos Visuales**: Animaciones de entrada, aciertos y errores
+- **Animaciones 3D**: Efectos de volteo de cartas con transformaciones 3D
+- **Sistema de Puntuación**: Seguimiento de intentos, aciertos y tiempo transcurrido
 
 ---
 
-## 🎨 Características Técnicas Implementadas
+## Características Técnicas Implementadas
 
 ### Animaciones y Transiciones
 - **Entrada del Tablero**: Fade + slide hacia arriba al cargar
@@ -64,7 +64,7 @@ Este proyecto fue desarrollado como trabajo práctico grupal, integrando las con
 
 ---
 
-## 👨‍💻 Descripciones y Comentarios de los Desarrolladores
+## Descripciones y Comentarios de los Desarrolladores
 
 ## Nazareno Negrete — Animaciones
 
