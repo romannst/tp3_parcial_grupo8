@@ -6,7 +6,8 @@
 
 **Memoria Visual** es un juego web didáctico que pone a prueba tu memoria visual. Se centra en encontrar todas las parejas de cartas iguales en el menor tiempo posible.
 
-Este proyecto fue desarrollado como trabajo práctico grupal, integrando las contribuciones de 6 miembros del equipo.
+Este proyecto fue desarrollado como trabajo práctico grupal, integrando las contribuciones de 6 miembros del equipo:
+Deploy: https://romannst.github.io/tp3_parcial_grupo8/
 
 ---
 
