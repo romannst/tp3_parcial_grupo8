@@ -23,6 +23,7 @@
   height: 100px;
   perspective: 1000px;
   cursor: pointer;
+  user-select: none;
   animation: cardAppear 0.4s ease backwards;
 }
 
